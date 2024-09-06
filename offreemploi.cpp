@@ -43,7 +43,7 @@ bool OffreEmploi::modifier()
 
     QSqlQuery query;
     QString res=QString::number(id_offre);
-          query.prepare("UPDATE OffreEmploi "" SET id_offre=:id_offre,titre=:titre,  description=:description,date_mise_en_actif=:date_mise_en_actif  where id_cand='"+res+"' ");
+          query.prepare("UPDATE OffreEmploi "" SET id_offre=:id_offre,titre=:titre,  description=:description,date_mise_en_actif=:date_mise_en_actif  where id_offre='"+res+"' ");
 
 
           query.bindValue(":id_offre", res);
@@ -60,7 +60,7 @@ void OffreEmploi::afficher(Ui::MainWindow *ui)
     QSqlQueryModel * modal= new QSqlQueryModel ();
     QSqlQuery*qry=new QSqlQuery();
 
-    qry->prepare("select * from id_offre");
+    qry->prepare("select * from OffreEmploi");
     qry->exec();
     modal->setQuery(*qry);
     modal->setHeaderData(0,Qt::Horizontal,QObject::tr("ID"));
@@ -68,9 +68,9 @@ void OffreEmploi::afficher(Ui::MainWindow *ui)
     modal->setHeaderData(2,Qt::Horizontal,QObject::tr("description"));
      modal->setHeaderData(3,Qt::Horizontal,QObject::tr("Titre"));
 
-    ui->tableView->setModel(modal);
+    ui->tableView_2->setModel(modal);
 
-    ui->tableView->horizontalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
+    ui->tableView_2->horizontalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
 }
 
 

@@ -440,34 +440,25 @@ ui->qrcode->setScaledContents(true);
 
 
 
-void MainWindow::on_pushButton_4_clicked()
-{
-    Candidat Can;
-    OffreEmploi off;
-    off.afficher(ui);
-    Can.afficher(ui);
-    ui->stackedWidget_2->setCurrentIndex(1);
-}
 
-void MainWindow::on_pushButton_5_clicked()
-{
-    Candidat Can;
-    OffreEmploi off;
-    off.afficher(ui);
-    Can.afficher(ui);
-    ui->stackedWidget_2->setCurrentIndex(2);
-
-}
 
 void MainWindow::on_pushButton_9_clicked()
 {
+    Candidat Can;
+    OffreEmploi off;
+    off.afficher(ui);
+    Can.afficher(ui);
     ui->stackedWidget_2->setCurrentIndex(0);
 
 }
 
 void MainWindow::on_pushButton_10_clicked()
 {
-    ui->stackedWidget_2->setCurrentIndex(0);
+    Candidat Can;
+    OffreEmploi off;
+    off.afficher(ui);
+    Can.afficher(ui);
+    ui->stackedWidget_2->setCurrentIndex(1);
 
 }
 
